@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <head>
-    <script src="./play.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Rock Paper Game</title>
 </head>
 <body>
-    
+    <div class="score">
+        <p> Your score: </p> <p id='hum'></p>
+        <p>Computer score: </p> <p id="com"></p>
+    </div>
+    <div class="game">
+        <button onclick="Play('rock')"> <img src="https://img.icons8.com/ios/100/000000/hand-rock.png"/> </button>   
+        <button onclick="Play('scissors')"> <img src="https://img.icons8.com/ios/100/000000/hand-scissors--v2.png"/> </button>
+        <button onclick="Play('paper')"> <img src="https://img.icons8.com/wired/64/000000/hand.png"/> </button>
+    </div>
+    <h3>The computer choose : </h3> <h3 id='wo'></h3><br>
+    <h3>you have :</h3><h3 id ='sc'></h3>
+    <script src="./play.js"></script>
 </body>
 </html>

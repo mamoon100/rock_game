@@ -1,3 +1,11 @@
+var hum = document.getElementById("hum");
+var com = document.getElementById("com");
+var wo = document.getElementById("wo");
+var sc = document.getElementById("sc");
+humm = 0;
+comm = 0;
+hum.innerHTML = humm;
+com.innerHTML = comm;
 function computerPlay () {
     var c =Math.floor(Math.random()*3)
     if (c === 1){
@@ -14,65 +22,76 @@ function computerPlay () {
 function select (human, computer) {
     if (human === "rock"){
         if (computer === "rock"){
-            return "It's a tie!"
+            wo.innerHTML = 'Rock'
+            sc.innerHTML = "Tie!"
         }
         else if (computer === "paper"){
-            c+=1
-            return "The computer wins :("
+            wo.innerHTML = 'Paper'
+            comm += 1
+            com.innerHTML = comm
+            sc.innerHTML = "Lost :("
         }
         else {
-            h+=1
-            return "The human win! whooooooooo!"
+            wo.innerHTML = 'Scissors'
+            humm += 1
+            hum.innerHTML = humm
+            sc.innerHTML = "Win! whooooooooo!"
         }
     }
     else if (human === "paper"){
         if (computer === "paper"){
-            return "It's a tie!"
+            wo.innerHTML = 'Paper'
+            sc.innerHTML = "Tie!"
         }
         else if (computer === "scissors"){
-            c+=1
-            return "The computer wins :("
+            wo.innerHTML = 'Scissors'
+            comm += 1
+            com.innerHTML = comm
+            sc.innerHTML = "Lost :("
         }
         else {
-            h+=1
-            return "The human win! whooooooooo!"
+            wo.innerHTML = 'Rock'
+            humm += 1
+            hum.innerHTML = humm
+            sc.innerHTML = "Win! whooooooooo!"
         }
     }
     else if (human === "scissors"){
         if (computer === "scissors"){
-            return "It's a tie!"
+            wo.innerHTML = 'Scissors'
+            sc.innerHTML = "Tie!"
         }
         else if (computer === "rock"){
-            c+=1
-            return "The computer wins :("
+            wo.innerHTML = 'Rock'
+            comm += 1
+            com.innerHTML = comm
+            sc.innerHTML = "Lost :("
         }
         else {
-            h+=1
-            return "The human win! whooooooooo!"
+            wo.innerHTML = 'Paper'
+            humm += 1
+            hum.innerHTML = humm
+            sc.innerHTML = "Win! whooooooooo!"
         }
-    }
-    else {
-        return "You have choosen a wopen that you don't have!!"
     }
 }
 
-function Play () {
+function Play (x) {
     var h = 0
     var c= 0
-    for (var i=1; i>0 ; i++){
-        var x = prompt ("Please select your wopen Rock, Paper or Scissors")
-        var y = computerPlay()
-        x = x.toLowerCase()
-        select(x, y)
-        console.log("The human score is =", h ,"The computer score is = ", c)
-        if (h >= 5){
-            console.log("the winner is the human")
-            break;
-        }
-        else if (c>=5) {
-            console.log("The winner is the computer")
-        }
+    var y = computerPlay()
+    x = x.toLowerCase()
+    select(x, y)
+    /*if (humm >= 5 ){
+        End("hum")
     }
+    else if (comm >= 5) {
+        End("com")
+    }*/
 }
-
-console.log(Play())
+/*
+This function was supposed to end the game 
+function End (v) {
+    body.innerHTML = "you have woooooooooooon"
+}
+*/
